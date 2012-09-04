@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <script type="text/javascript" src="assets/strftime.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript">    
     (function ($, undefined) {
 
       // Put custom repo URL's in this object, keyed by repo name.
@@ -22,7 +22,7 @@
 
       // Put custom repo descriptions in this object, keyed by repo name.
       var repoDescriptions = {
-        "callisto": "A XAML toolkit for buiding WinRT apps"
+        "callisto": "A XAML toolkit for buiding WinRT apps which includes great controls for completing the Windows UI experience."
       };
 
       function repoDescription(repo) {
@@ -72,6 +72,10 @@
           if (result.data && result.data.length > 0) {
             repos = repos.concat(result.data);
             addRepos(repos, page + 1);
+            
+            $.each(repos.slice(0, 3), function (i, repo) {
+                addRecentlyUpdatedRepo(repo);
+              });
           }
           else {
             $(function () {
