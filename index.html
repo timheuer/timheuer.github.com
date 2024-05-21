@@ -4,6 +4,31 @@
 <head>
     <title>Your Name - Portfolio</title>
     <style>
+        .repo-card {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .repo-card h3 {
+            margin: 0;
+        }
+
+        .repo-card a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .repo-card a:hover {
+            color: #0056b3;
+        }
+
+        .repo-card p {
+            color: #333;
+        }
+
         /* Add your CSS here */
         .profile-pic {
             width: 100px;
@@ -11,21 +36,77 @@
             border-radius: 50%;
             object-fit: cover;
         }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            margin: 0;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #007BFF;
+        }
     </style>
     <script>
-        // Add your JavaScript here
         window.onload = function () {
             fetch('https://api.github.com/users/timheuer/repos?sort=updated')
                 .then(response => response.json())
                 .then(data => {
                     const workSection = document.getElementById('work');
-                    const ul = document.createElement('ul');
                     data.forEach(repo => {
-                        const li = document.createElement('li');
-                        li.textContent = repo.name;
-                        ul.appendChild(li);
+                        const div = document.createElement('div');
+                        div.className = 'repo-card';
+
+                        const h3 = document.createElement('h3');
+                        const a = document.createElement('a');
+                        a.href = repo.html_url;
+                        a.textContent = repo.name;
+                        h3.appendChild(a);
+                        div.appendChild(h3);
+
+                        const p = document.createElement('p');
+                        p.textContent = repo.description || 'Click repo for more details';
+                        div.appendChild(p);
+
+                        workSection.appendChild(div);
                     });
-                    workSection.appendChild(ul);
                 });
         };
     </script>
