@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title>Tim Heuer | Open Source Projects on GitHub</title>
-    <link rel="stylesheet" type="text/css" href="assets/reset.css">
-    <link rel="stylesheet" type="text/css" href="assets/grid.css">
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/strftime.js"></script>
-    <script type="text/javascript">    
+
+<head>
+  <title>Tim Heuer | Open Source Projects on GitHub</title>
+  <link rel="stylesheet" type="text/css" href="assets/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/grid.css">
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/strftime.js"></script>
+  <script type="text/javascript">
     (function ($, undefined) {
 
       // Put custom repo URL's in this object, keyed by repo name.
@@ -65,17 +66,17 @@
         page = page || 1;
 
         var uri = "https://api.github.com/users/timheuer/repos?callback=?"
-                + "&per_page=100"
-                + "&page="+page;
+          + "&per_page=100"
+          + "&page=" + page;
 
         $.getJSON(uri, function (result) {
           if (result.data && result.data.length > 0) {
             repos = repos.concat(result.data);
             addRepos(repos, page + 1);
-            
+
             $.each(repos.slice(0, 3), function (i, repo) {
-                addRecentlyUpdatedRepo(repo);
-              });
+              addRecentlyUpdatedRepo(repo);
+            });
           }
           else {
             $(function () {
@@ -85,9 +86,9 @@
               $.each(repos, function (i, repo) {
                 repo.pushed_at = new Date(repo.pushed_at);
 
-                var weekHalfLife  = 1.146 * Math.pow(10, -9);
+                var weekHalfLife = 1.146 * Math.pow(10, -9);
 
-                var pushDelta    = (new Date) - Date.parse(repo.pushed_at);
+                var pushDelta = (new Date) - Date.parse(repo.pushed_at);
                 var createdDelta = (new Date) - Date.parse(repo.created_at);
 
                 var weightForPush = 1;
@@ -178,7 +179,7 @@
 
         var left = flyzone().width() + size;
 
-        $img.animate({left: left}, speed, function () {
+        $img.animate({ left: left }, speed, function () {
           $img.remove();
           makeRandomLarry();
         });
@@ -211,33 +212,38 @@
       }
 
     })(jQuery);
-    </script>
-  </head>
-  <body>
-    <div id="wrapper" class="grid clearfix">
-      <div id="main" class="grid-1">
-        <div id="logo"><h1>Tim Heuer</h1></div>
-        <h1>My GitHub world...</h1>
-        <p>Questions? <a href="http://twitter.com/timheuer">@timheuer</a></p>
-        <p>Visit <a href="http://timheuer.com/blog/">timheuer.com/blog</a></p>
+  </script>
+</head>
+
+<body>
+  <div id="wrapper" class="grid clearfix">
+    <div id="main" class="grid-1">
+      <div id="logo">
+        <h1>Tim Heuer</h1>
       </div>
-
-      <div class="grid grid-3">
-        <div id="statistics" class="grid-1 alpha header">
-          <h1>Statistics</h1>
-          <p>
-            <a href="https://github.com/timheuer/repositories"><span id="num-repos"><img src="assets/spinner.gif" /></span> public repos</a>
-          </p>
-          <p class="email"><a href="mailto:tim@timheuer.com">tim@timheuer.com</a></p>
-        </div>
-
-        <div id="recently-updated" class="grid-2 omega header">
-          <h1>Recently updated <a href="https://github.com/timheuer/repositories">View All on GitHub</a></h1>
-          <ol id="recently-updated-repos"></ol>
-        </div>
-      </div>
-
-      <ol id="repos"></ol>
+      <h1>My GitHub world...</h1>
+      <p>Questions? <a href="https://twitter.com/timheuer">@timheuer</a></p>
+      <p>Visit <a href="https://timheuer.com/blog/">timheuer.com/blog</a></p>
     </div>
-  </body>
+
+    <div class="grid grid-3">
+      <div id="statistics" class="grid-1 alpha header">
+        <h1>Statistics</h1>
+        <p>
+          <a href="https://github.com/timheuer/repositories"><span id="num-repos"><img
+                src="assets/spinner.gif" /></span> public repos</a>
+        </p>
+        <p class="email"><a href="mailto:tim@timheuer.com">tim@timheuer.com</a></p>
+      </div>
+
+      <div id="recently-updated" class="grid-2 omega header">
+        <h1>Recently updated <a href="https://github.com/timheuer/repositories">View All on GitHub</a></h1>
+        <ol id="recently-updated-repos"></ol>
+      </div>
+    </div>
+
+    <ol id="repos"></ol>
+  </div>
+</body>
+
 </html>

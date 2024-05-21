@@ -21,7 +21,8 @@ h2 {
   color: #0084b4;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: #0084b4;
   text-decoration: none;
 }
@@ -42,12 +43,14 @@ a:hover {
   text-align: center;
 }
 
-#main, div.header, li.repo {
+#main,
+div.header,
+li.repo {
   background: white;
   background: rgba(255, 255, 255, 0.7);
-  -moz-box-shadow:    0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-  box-shadow:         0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
 
@@ -55,7 +58,8 @@ a:hover {
   margin: 30px 0;
 }
 
-#main h1, #main p {
+#main h1,
+#main p {
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -69,7 +73,7 @@ a:hover {
   width: 160px;
   height: 107px;
   margin: 15px 0 0 15px;
-  background: url("timheuer.png");
+  background: url("https://avatars.githubusercontent.com/u/4821?v=4");
   text-indent: -99999px;
 }
 
@@ -81,7 +85,8 @@ div.header {
   height: 130px;
 }
 
-div.header h1, div.header p {
+div.header h1,
+div.header p {
   margin: 10px 15px 0;
 }
 
@@ -89,14 +94,16 @@ div.header h1 {
   margin-bottom: 10px;
 }
 
-#num-repos, #num-members {
+#num-repos,
+#num-members {
   font-size: 14px;
   font-weight: bold;
   color: #0084b4;
   line-height: 15px;
 }
 
-#statistics a:link, #statistics a:visited {
+#statistics a:link,
+#statistics a:visited {
   color: inherit;
 }
 
@@ -142,7 +149,7 @@ li.repo {
   height: 150px;
 }
 
-li.repo > a {
+li.repo>a {
   display: block;
   width: 100%;
   height: 100%;
@@ -156,7 +163,9 @@ li.repo a:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 
-li.repo h2, li.repo h3, li.repo p {
+li.repo h2,
+li.repo h3,
+li.repo p {
   margin: 10px 15px;
 }
 
@@ -206,36 +215,192 @@ li.repo h3 {
   border-right-color: #6aad2d;
 }
 
-@keyframes small-swing { 0% { margin-top: 0px } 50% { margin-top: -10px } 100% { margin-top: 0px } }
-@-moz-keyframes small-swing { 0% { margin-top: 0px } 50% { margin-top: -10px } 100% { margin-top: 0px } }
-@-webkit-keyframes small-swing { 0% { margin-top: 0px } 50% { margin-top: -10px } 100% { margin-top: 0px } }
-@-ms-keyframes small-swing { 0% { margin-top: 0px } 50% { margin-top: -10px } 100% { margin-top: 0px } }
+@keyframes small-swing {
+  0% {
+    margin-top: 0px
+  }
 
-@keyframes medium-swing { 0% { margin-top: 0px } 50% { margin-top: -20px } 100% { margin-top: 0px } }
-@-moz-keyframes medium-swing { 0% { margin-top: 0px } 50% { margin-top: -20px } 100% { margin-top: 0px } }
-@-webkit-keyframes medium-swing { 0% { margin-top: 0px } 50% { margin-top: -20px } 100% { margin-top: 0px } }
-@-ms-keyframes medium-swing { 0% { margin-top: 0px } 50% { margin-top: -20px } 100% { margin-top: 0px } }
+  50% {
+    margin-top: -10px
+  }
 
-@keyframes large-swing { 0% { margin-top: 0px } 50% { margin-top: -40px } 100% { margin-top: 0px } }
-@-moz-keyframes large-swing { 0% { margin-top: 0px } 50% { margin-top: -40px } 100% { margin-top: 0px } }
-@-webkit-keyframes large-swing { 0% { margin-top: 0px } 50% { margin-top: -40px } 100% { margin-top: 0px } }
-@-ms-keyframes large-swing { 0% { margin-top: 0px } 50% { margin-top: -40px } 100% { margin-top: 0px } }
+  100% {
+    margin-top: 0px
+  }
+}
 
-.larry.size-smaller, .larry.size-small {
+@-moz-keyframes small-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -10px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+@-webkit-keyframes small-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -10px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+@-ms-keyframes small-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -10px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+@keyframes medium-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -20px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+@-moz-keyframes medium-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -20px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+@-webkit-keyframes medium-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -20px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+@-ms-keyframes medium-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -20px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+@keyframes large-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -40px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+@-moz-keyframes large-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -40px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+@-webkit-keyframes large-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -40px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+@-ms-keyframes large-swing {
+  0% {
+    margin-top: 0px
+  }
+
+  50% {
+    margin-top: -40px
+  }
+
+  100% {
+    margin-top: 0px
+  }
+}
+
+.larry.size-smaller,
+.larry.size-small {
   animation: small-swing 0.5s infinite ease-in-out;
   -moz-animation: small-swing 0.5s infinite ease-in-out;
   -webkit-animation: small-swing 0.5s infinite ease-in-out;
   -ms-animation: small-swing 0.5s infinite ease-in-out;
 }
 
-.larry.size-medium, .larry.size-large {
+.larry.size-medium,
+.larry.size-large {
   animation: medium-swing 1.25s infinite ease-in-out;
   -moz-animation: medium-swing 1.25s infinite ease-in-out;
   -webkit-animation: medium-swing 1.25s infinite ease-in-out;
   -ms-animation: medium-swing 1.25s infinite ease-in-out;
 }
 
-.larry.size-medium, .larry.size-fat {
+.larry.size-medium,
+.larry.size-fat {
   animation: large-swing 1.5s infinite ease-in-out;
   -moz-animation: large-swing 1.5s infinite ease-in-out;
   -webkit-animation: large-swing 1.5s infinite ease-in-out;
