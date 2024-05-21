@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Your Name - Portfolio</title>
+    <title>Tim Heuer - GitHub Repos</title>
     <style>
         .repo-card {
             background-color: white;
@@ -63,6 +63,11 @@
             object-fit: cover;
         }
 
+        .repo-description {
+            font-size: 0.8em;
+            /* Adjust as needed */
+        }
+
         main {
             margin: 20px;
         }
@@ -82,6 +87,20 @@
 
         a:hover {
             color: #007BFF;
+        }
+
+        /* New styles for grid layout */
+        #work {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #work {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <script>
